@@ -17,13 +17,13 @@ apiRouter.route('/criminals')
 
 apiRouter.route('/criminals/:id')
 
-  // GET return specific candy
+  // GET return specific criminal
   .get(criminalsController.getCriminal)
 
-  // PATCH update existing candy
+  // PATCH update existing criminal
   .patch(criminalsController.updateCriminal)
 
-  // DELETE remove specific candy from DB
+  // DELETE remove specific criminal from DB
   .delete(criminalsController.removeCriminal);
 
 module.exports = apiRouter;
