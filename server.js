@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // pull correct settings per environment
-var config = require('./app/config/config.js')
+var config = require('./app/config/config.js');
 var environmentSettings = config.config();
 
 // connect to DB which is on port 27017

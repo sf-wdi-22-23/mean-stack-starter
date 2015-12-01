@@ -1,23 +1,30 @@
 var express = require('express');
 var apiRouter = express.Router();
-var Article = require('../models/Article');
-var articlesController = require('../controllers/articles-controller'); // bring in controllers
+var criminalsController = require('../controllers/criminals');
+var bodyParser = require('body-parser'); //parses information from POST
+var methodOverride = require('method-override'); //used to manipulate POST
 
-apiRouter.param('article_id', articlesController.articleById);
+apiRouter.param('criminal_id', criminalsController.criminalById);
 
 // configure router middleware
-apiRouter.route('/articles')
+apiRouter.route('/criminals')
 
-  .post(articlesController.create)
+  //GET all criminals
+  .get(criminalsController.getAll)
 
-  .get(articlesController.index);
+  //POST a new blob
+  .post(criminalsController.createCriminal);
 
-apiRouter.route('/articles/:article_id')
+apiRouter.route('/criminals/:id')
 
-  .get(articlesController.show)
+  // GET return specific candy
+  .get(criminalsController.getCriminal)
 
-  .patch(articlesController.update)
+  // PATCH update existing candy
+  .patch(criminalsController.updateCriminal)
 
-  .delete(articlesController.destroy);
+  // DELETE remove specific candy from DB
+  .delete(criminalsController.removeCriminal);
 
 module.exports = apiRouter;
+
