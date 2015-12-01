@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MEAN Article App</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Angular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="reddit">
+
+  <!-- navbar with links to states -->
+  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="articles">Articles App</a>
+      </div>
+      <ul class="nav navbar-nav">
+          <li><a ui-sref="articles">View all Articles</a></li>
+          <li><a ui-sref="new">Create an Article</a></li>
+      </ul>
+  </nav>
+
+  <!-- this is where our partials are rendered; partial entry point -->
+  <div ui-view></div>
+
+  <!-- scripts -->
+  <script src="/app.js"></script>
+  <script src="/config/routes.js"></script>
+  <script src="/services/api-services.js"></script>
+  <script src="/components/articles/articles-controller.js"></script>
+  <script src="/components/article-form/article-forms-controller.js"></script>
+</body>
+</html>
