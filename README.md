@@ -12,7 +12,6 @@ Taken from mean.io:
 - __Node.js__ - a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications"
 
 
-
 ## Context
 
 The intention of this documentation and corresponding application is to provide an example MEAN stack app built with professional, opinionated conventions and meant to serve as a style guide, of sorts. Students can use the source code as a guiding example as they work through projects and exercises.
